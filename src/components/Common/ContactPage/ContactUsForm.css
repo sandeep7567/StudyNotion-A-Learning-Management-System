@@ -1,0 +1,13 @@
+/* css */
+
+.common-input {
+  @apply flex p-3 border-b rounded-lg bg-richblack-800 text-richblack-100 shadow-[0px_-1px_0px_0px_rgba(255,255,255,0.18)_inset];
+}
+
+.common-label {
+  @apply font-inter text-sm font-normal text-richblack-5
+}
+
+.error-style {
+  @apply font-extralight font-inter text-xs italic text-pink-700 hover:text-pink-800
+}
