@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import IconButton from '../../Common/IconButton';
-import {LuEdit} from 'react-icons/lu'
+import { BiEdit } from 'react-icons/bi'
 import DashboardHeading from '../../Common/DashboardHeading';
 import { formattedDate } from '../../../utils/dateFormatter';
 // import { setUser } from '../../../slices/profileSlice';
-import { getUserDetails } from '../../../services/oprations/profileAPI';
+// import { getUserDetails } from '../../../services/oprations/profileAPI';
 import Error from '../../../pages/Error';
 
 const MyProfile = () => {
@@ -71,7 +71,7 @@ const MyProfile = () => {
           return navigate("/dashboard/settings")}}
           customClasses={"bg-yellow-50 md:w-fit w-fit ml-auto md:mx-0 text-richblack-900 text-base font-medium flex flex-row-reverse px-5 py-2 bg-yellow-50 my-auto rounded-lg shadow-[-0.5px_-1.5px_0px_0px_rgba(0,0,0,1)_inset] justify-center items-center gap-2 transition-all duration-200 hover:bg-yellow-100"}
         >
-          <LuEdit size={"1.125rem"}/>
+          <BiEdit size={"1.125rem"}/>
         </IconButton>
       </div>
 
@@ -85,7 +85,7 @@ const MyProfile = () => {
               return navigate("/dashboard/settings")}}
               customClasses={"bg-yellow-50 text-richblack-900 text-base font-medium flex flex-row-reverse px-5 py-2 bg-yellow-50 my-auto rounded-lg shadow-[-0.5px_-1.5px_0px_0px_rgba(0,0,0,1)_inset] justify-center items-center gap-2 transition-all duration-200 hover:bg-yellow-100"}
           >
-            <LuEdit size={"1.125rem"}/>
+            <BiEdit size={"1.125rem"}/>
           </IconButton>
         </div>
         <p
@@ -111,7 +111,7 @@ const MyProfile = () => {
                               justify-center items-center gap-2 transition-all duration-200 
                               hover:bg-yellow-100`}
           >
-            <LuEdit size={"1.125rem"}/>
+            <BiEdit size={"1.125rem"}/>
           </IconButton>
           
         </div>
