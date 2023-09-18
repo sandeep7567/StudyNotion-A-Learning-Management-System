@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 const EditCourse = () => {
 
   const { courseId } = useParams();
-  console.log(useParams());
+  // console.log(useParams());
   const dispatch = useDispatch();
   const {course} = useSelector((state) => state.course);
   const {token} = useSelector((state) => state.auth);
