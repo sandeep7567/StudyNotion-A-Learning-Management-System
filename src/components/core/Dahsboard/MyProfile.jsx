@@ -4,6 +4,8 @@ import IconButton from '../../Common/IconButton';
 import { BiEdit } from 'react-icons/bi'
 import DashboardHeading from '../../Common/DashboardHeading';
 import { formattedDate } from '../../../utils/dateFormatter';
+
+import { useSelector } from 'react-redux';
 // import { setUser } from '../../../slices/profileSlice';
 // import { getUserDetails } from '../../../services/oprations/profileAPI';
 import Error from '../../../pages/Error';
