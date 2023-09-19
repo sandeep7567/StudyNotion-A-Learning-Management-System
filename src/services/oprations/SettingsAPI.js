@@ -30,14 +30,15 @@ export const updateDisplayPicture = (token, formData, navigate) => {
       if(!response.data || !response.data.success) {
         throw new Error(response.data.message || "Update Profile Picture failed");
       }
-      console.log(response?.data?.data)
+      // console.log(response?.data?.data);
+      const { password, ...restData } = response?.data?.data;
 
-      const profilePic = response?.data?.data?.image
-        ? response?.data?.data?.image
-        : `https://api.dicebear.com/5.x/initials/svg?seed=${response?.data?.data?.firstName} ${response?.data?.data?.lastName}`
+      const profilePic = restData?.image
+        ? restData?.image
+        : `https://api.dicebear.com/5.x/initials/svg?seed=${restData?.firstName} ${restData?.lastName}`
 
-      dispatch(setUser( { ...response?.data?.data, image: profilePic, } ));
-      localStorage.setItem("user", JSON.stringify({...response?.data?.data, image: profilePic }))
+      dispatch(setUser( { ...restData, image: profilePic, } ));
+      localStorage.setItem("user", JSON.stringify({...restData, image: profilePic }))
 
       navigate("/dashboard/my-profile")
 
@@ -112,13 +113,13 @@ export const changePassword = (token, formData, navigate) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
 
-    console.log(token)
+    // console.log(token);
 
     try {
       const response = await apiConnector("POST", CHANGE_PASSWORD_API, formData, {
         authorization: `Bearer ${token}`,
       })
-      console.log(response)
+      // console.log(response);
 
       if(!response.data || !response.data.success) {
         throw new Error(response.data.message || "Update Profile formData failed");
